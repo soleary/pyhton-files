@@ -11,3 +11,13 @@ with open('bros.txt', 'r') as f:
         if pat1.match(line):
             print(line, end='')
 
+print("\n.fullmatch() matches against the whole string, as if the supplied regex were anchored at each end.")
+print("It's not quite like '^regex$', as '$' will match a newline chracter at the end of string, but .fullmatch()")
+print("requires us to include the '\\n' in the regex.")
+pat2 = re.compile('bro\n')
+
+with open('bros.txt', 'r') as f:
+    for line in f:
+        if pat2.fullmatch(line):
+            print(line, end='')
+
