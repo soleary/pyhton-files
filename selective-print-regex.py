@@ -21,3 +21,12 @@ with open('bros.txt', 'r') as f:
         if pat2.fullmatch(line):
             print(line, end='')
 
+print("\n.search() will match anywhere in the supplied string, so if you only want to match at the beginning, you've got")
+print("to anchor the patten in your regex.")
+pat3 = re.compile('^bro')
+
+with open('bros.txt', 'r') as f:
+    for line in f:
+        if pat3.search(line):
+            print(line, end='')
+
