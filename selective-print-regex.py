@@ -30,3 +30,12 @@ with open('bros.txt', 'r') as f:
         if pat3.search(line):
             print(line, end='')
 
+print("\nThis will have to match a whole string, since it's anchored at both ends.  But '$' will match the end of a string or a newline")
+print("followed by the end of the string, so we don't have to actually include the '\\n' in our regex.")
+pat4 = re.compile('^bro$')
+
+with open('bros.txt', 'r') as f:
+    for line in f:
+        if pat4.search(line):
+            print(line, end='')
+
