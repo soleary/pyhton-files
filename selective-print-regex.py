@@ -39,3 +39,10 @@ with open('bros.txt', 'r') as f:
         if pat4.search(line):
             print(line, end='')
 
+print("\nAnd here's .search() with an unanchored regex, so it can match at any place in the string.")
+pat5 = re.compile('bro')
+
+with open('bros.txt', 'r') as f:
+    for line in f:
+        if pat5.search(line):
+            print(line, end='')
